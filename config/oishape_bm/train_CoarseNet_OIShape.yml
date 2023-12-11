@@ -1,0 +1,60 @@
+DATA_PRESET:
+  CENTER_IDX: 9
+  USE_CACHE: True
+  N_RESAMPLED_OBJ_POINTS: 4096
+
+DATASET:
+  TRAIN:
+    TYPE: OIShape
+    DATA_SPLIT: train
+    DATA_ROOT: ./data
+    OBJ_CATES: all
+    INTENT_MODE: ["use", "hold", "liftup"]
+
+
+  VAL:
+    TYPE: OIShape
+    DATA_SPLIT: val
+    DATA_ROOT: ./data
+    OBJ_CATES: all
+    INTENT_MODE: ["use", "hold", "liftup"]
+
+  TEST:
+    TYPE: OIShape
+    DATA_SPLIT: test
+    DATA_ROOT: ./data
+    OBJ_CATES: all
+    INTENT_MODE: ["use", "hold", "liftup"]
+
+TRANSFORM:
+  TYPE: GrabNetTransformHandObject
+  RAND_ROT: True
+  USE_ORIGINAL_OBJ_ROT: False
+  BPS_BASIS_PATH: assets/GrabNet/bps.npz
+  BPS_FEAT_TYPE: dists
+  POSE_DISTURBER: 
+    tsl_sigma: 0.02
+    pose_sigma: 0.2
+    root_rot_sigma: 0.004
+
+MODEL:
+  TYPE: CoarseNet
+  LATENTD: 16
+  KL_COEF: 0.005
+  VPE_PATH: "assets/GrabNet/verts_per_edge.npy"
+  C_WEIGHT_PATH: "assets/GrabNet/rhand_weight.npy"
+  PRETRAINED: null
+
+TRAIN:
+  MANUAL_SEED: 23
+  CONV_REPEATABLE: True
+  BATCH_SIZE: 256
+  EPOCH: 268
+  OPTIMIZER: adam
+  LR: 0.0005
+  WEIGHT_DECAY: 0.0
+  SCHEDULER: MultiStepLR
+  LR_DECAY_STEP: [268]
+  LR_DECAY_GAMMA: 0.1
+  FIND_UNUSED_PARAMETERS: True
+  GRAD_CLIP_ENABLED: False

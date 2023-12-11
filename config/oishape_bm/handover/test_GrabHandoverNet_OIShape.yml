@@ -1,0 +1,54 @@
+DATA_PRESET:
+  CENTER_IDX: 9
+  USE_CACHE: True
+  N_RESAMPLED_OBJ_POINTS: 4096
+
+DATASET:
+  TRAIN:
+    TYPE: OIShape
+    DATA_SPLIT: train
+    DATA_ROOT: ./data
+    OBJ_CATES: "all"
+    INTENT_MODE: ["handover"]
+    DATA_MODE: handover
+    
+  VAL:
+    TYPE: OIShape
+    DATA_SPLIT: val
+    DATA_ROOT: ./data
+    OBJ_CATES: "all"
+    INTENT_MODE: ["handover"]
+    DATA_MODE: handover
+
+  TEST:
+    TYPE: OIShape
+    DATA_SPLIT: test
+    DATA_ROOT: ./data
+    OBJ_CATES: "all"
+    INTENT_MODE: ["handover"]
+    DATA_MODE: handover
+
+TRANSFORM: 
+  TYPE: GrabNetTransformHandover
+  RAND_ROT: True
+  RAND_DEG_STD: 10
+  USE_ORIGINAL_OBJ_ROT: False
+  BPS_BASIS_PATH: assets/GrabNet/bps.npz
+  BPS_FEAT_TYPE: dists
+
+
+MODEL:
+  TYPE: GrabNet
+  COARSE_NET: 
+    TYPE: CoarseHandoverNet
+    LATENTD: 16
+    KL_COEF: 0.005
+    VPE_PATH: "assets/GrabNet/verts_per_edge.npy"
+    C_WEIGHT_PATH: "assets/GrabNet/rhand_weight.npy"
+    PRETRAINED: checkpoints/handover/CoarseHandoverNet.pth.tar
+  REFINE_NET: 
+    TYPE: RefineHandoverNet
+    KL_COEF: 0.005
+    VPE_PATH: "assets/GrabNet/verts_per_edge.npy"
+    C_WEIGHT_PATH: "assets/GrabNet/rhand_weight.npy"
+    PRETRAINED: checkpoints/handover/RefineHandoverNet.pth.tar

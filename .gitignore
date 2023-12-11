@@ -12,6 +12,7 @@ assets/*
 !assets/anchor
 !assets/GrabNet
 !assets/hand_mesh_watertight.obj
+!assets/hand_palm_full.txt
 
 data/*
 !data/.gitkeep
@@ -19,6 +20,7 @@ data/*
 
 thirdparty/*
 !thirdparty/.gitkeep
+!thirdparty/libmesh
 
 checkpoints/*
 !checkpoints/.gitkeep

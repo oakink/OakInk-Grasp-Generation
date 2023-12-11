@@ -1,0 +1,7 @@
+triangle_hash.cpp
+build
+dist
+*.so
+*.txt
+PKG-INFO
+*.egg-info

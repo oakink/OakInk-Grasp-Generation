@@ -1,0 +1,60 @@
+DATA_PRESET:
+  CENTER_IDX: 9
+  USE_CACHE: True
+  N_RESAMPLED_OBJ_POINTS: 4096
+  N_INTENTS: 2
+
+DATASET:
+  TRAIN:
+    TYPE: OIShape
+    DATA_SPLIT: ["train", "val"]
+    DATA_ROOT: ./data
+    DATA_MODE: intent
+    OBJ_CATES: ["trigger_sprayer"]
+    INTENT_MODE: ["use", "hold"]
+    
+  VAL:
+    TYPE: OIShape
+    DATA_SPLIT: test
+    DATA_ROOT: ./data
+    DATA_MODE: intent
+    OBJ_CATES: ["trigger_sprayer"]
+    INTENT_MODE: ["use", "hold"]
+
+  TEST:
+    TYPE: OIShape
+    DATA_SPLIT: test
+    DATA_ROOT: ./data
+    DATA_MODE: intent
+    OBJ_CATES: ["trigger_sprayer"]
+    INTENT_MODE: ["use"]
+
+TRANSFORM:
+  TYPE: GrabNetTransformIntent
+  RAND_ROT: True
+  RAND_DEG_STD: 20 # in degree, apporx 20 degree, 3 sigma is 60 degree
+  USE_ORIGINAL_OBJ_ROT: False
+  BPS_BASIS_PATH: assets/GrabNet/bps.npz
+  BPS_FEAT_TYPE: dists
+
+MODEL:
+  TYPE: CoarseIntentNetIntentEmbedEncode
+  LATENTD: 16
+  KL_COEF: 0.005
+  VPE_PATH: "assets/GrabNet/verts_per_edge.npy"
+  C_WEIGHT_PATH: "assets/GrabNet/rhand_weight.npy"
+  PRETRAINED: null
+
+TRAIN:
+  MANUAL_SEED: 23
+  CONV_REPEATABLE: True
+  BATCH_SIZE: 32
+  EPOCH: 512
+  OPTIMIZER: adam
+  LR: 0.0005
+  WEIGHT_DECAY: 0.0
+  SCHEDULER: MultiStepLR
+  LR_DECAY_STEP: [512]
+  LR_DECAY_GAMMA: 0.1
+  FIND_UNUSED_PARAMETERS: True
+  GRAD_CLIP_ENABLED: False

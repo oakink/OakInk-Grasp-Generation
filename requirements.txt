@@ -1,0 +1,27 @@
+
+--extra-index-url https://download.pytorch.org/whl/cu113
+torch==1.12.0+cu113
+torchvision==0.13.0+cu113 
+torchaudio==0.12.0
+
+numpy
+matplotlib
+scipy
+pillow
+opencv-python
+opencv-contrib-python
+open3d
+trimesh
+scikit-learn
+scikit_video
+pybullet
+joblib
+
+tqdm
+termcolor
+pyyaml
+GitPython
+tensorboardX
+deprecation
+
+

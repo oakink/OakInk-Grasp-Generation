@@ -1,0 +1,52 @@
+DATA_PRESET:
+  CENTER_IDX: 9
+  USE_CACHE: True
+  N_RESAMPLED_OBJ_POINTS: 2048
+
+DATASET:
+  TRAIN:
+    TYPE: OIShape
+    DATA_SPLIT: train
+    DATA_ROOT: ./data
+    OBJ_CATES: all
+    INTENT_MODE: ["use", "hold", "liftup"]
+
+
+  VAL:
+    TYPE: OIShape
+    DATA_SPLIT: val
+    DATA_ROOT: ./data
+    OBJ_CATES: all
+    INTENT_MODE: ["use", "hold", "liftup"]
+
+  TEST:
+    TYPE: OIShape
+    DATA_SPLIT: test
+    DATA_ROOT: ./data
+    OBJ_CATES: all
+    INTENT_MODE: ["use", "hold", "liftup"]
+
+
+TRANSFORM:
+  TYPE: GrabNetTransformHandObject
+  RAND_ROT: False
+  USE_ORIGINAL_OBJ_ROT: True
+  BPS_BASIS_PATH: assets/GrabNet/bps.npz
+  BPS_FEAT_TYPE: dists
+
+MODEL:
+  TYPE: GrabNet
+  COARSE_NET: 
+    TYPE: CoarseNet
+    LATENTD: 16
+    KL_COEF: 0.005
+    VPE_PATH: "assets/GrabNet/verts_per_edge.npy"
+    C_WEIGHT_PATH: "assets/GrabNet/rhand_weight.npy"
+    PRETRAINED: checkpoints/grabnet_oishape/CoarseNet.pth.tar
+  REFINE_NET:
+    TYPE: RefineNet
+    KL_COEF: 0.005
+    VPE_PATH: "assets/GrabNet/verts_per_edge.npy"
+    C_WEIGHT_PATH: "assets/GrabNet/rhand_weight.npy"
+    PRETRAINED: checkpoints/grabnet_oishape/RefineNet.pth.tar
+    

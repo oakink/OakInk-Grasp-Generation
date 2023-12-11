@@ -1,0 +1,9 @@
+name: oishape_bm
+
+channels:
+  - defaults
+
+dependencies:
+  - python==3.10
+  - pip
+  - setuptools
