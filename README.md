@@ -3,7 +3,7 @@
   <p align="center">
     <img src="docs/static/oakink_logo.png"" alt="Logo" width="30%">
   </p>
-  <h2 align="center">OakInk-Shape Benchmark</h2>
+  <h2 align="center">Grasp Generation models on OakInk-Shape dataset</h2>
 
   <p align="center">
     <a href="https://lixiny.github.io"><strong>Lixin Yang*</strong></a>
