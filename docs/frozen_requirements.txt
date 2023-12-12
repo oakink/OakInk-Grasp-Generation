@@ -1,17 +1,22 @@
+absl-py==2.0.0
 addict==2.4.0
-ansi2html==1.8.0
+ansi2html==1.9.1
 asttokens==2.4.1
 attrs==23.1.0
 blinker==1.7.0
 bps-torch @ git+https://github.com/kailinLi/bps_torch.git@5290cab5251e0175b8241d81dfd704206e940cbb
-certifi==2023.11.17
+Brotli @ file:///tmp/abs_ecyw11_7ze/croots/recipe/brotli-split_1659616059936/work
+cachetools==5.3.2
+certifi @ file:///croot/certifi_1700501669400/work/certifi
+cffi @ file:///tmp/abs_98z5h56wf8/croots/recipe/cffi_1659598650955/work
 chamfer-distance @ git+https://github.com/otaheri/chamfer_distance.git@f86f6f7cadd3aca642704573d1626c67ca2e2846
-charset-normalizer==3.3.2
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
 chumpy @ git+https://github.com/mattloper/chumpy.git@51d5afd92a8ded3637553be8cef41f328a1c863a
 click==8.1.7
 comm==0.2.0
 ConfigArgParse==1.7
 contourpy==1.2.0
+cryptography @ file:///croot/cryptography_1694444244250/work
 cycler==0.12.1
 Cython==3.0.6
 dash==2.14.2
@@ -28,7 +33,10 @@ fonttools==4.46.0
 fvcore==0.1.5.post20221221
 gitdb==4.0.11
 GitPython==3.1.40
-idna==3.6
+google-auth==2.25.2
+google-auth-oauthlib==1.1.0
+grpcio==1.60.0
+idna @ file:///croot/idna_1666125576474/work
 imageio==2.33.1
 importlib-metadata==7.0.0
 iopath==0.1.10
@@ -45,15 +53,20 @@ jupyterlab-widgets==3.0.9
 kiwisolver==1.4.5
 lazy_loader==0.3
 manotorch @ git+https://github.com/lixiny/manotorch.git@2a66c8d81d9bc313af899d6d5ab05ea9f981caca
+Markdown==3.5.1
 MarkupSafe==2.1.3
 matplotlib==3.8.2
 matplotlib-inline==0.1.6
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
 nbformat==5.7.0
 nest-asyncio==1.5.8
 networkx==3.2.1
 ninja==1.11.1.1
-numpy==1.26.2
-oikit @ git+https://github.com/oakink/OakInk.git@9ba615951d36908866545fb9e7ee68619a0907d0
+numpy @ file:///croot/numpy_and_numpy_base_1682520569166/work
+oauthlib==3.2.2
+oikit @ git+https://github.com/oakink/OakInk.git@045688eeba5cb5ee1edc4ffd1ad96e55d41ff6dd
 open3d==0.17.0
 opencv-contrib-python==4.8.1.78
 opencv-python==4.8.1.78
@@ -62,50 +75,58 @@ packaging==23.2
 pandas==2.1.4
 parso==0.8.3
 pexpect==4.9.0
-Pillow==10.1.0
+Pillow @ file:///croot/pillow_1696580024257/work
 platformdirs==4.1.0
 plotly==5.18.0
 plyfile==1.0.2
 portalocker==2.8.2
-prompt-toolkit==3.0.41
-protobuf==4.25.1
+prompt-toolkit==3.0.42
+protobuf==4.23.4
 ptyprocess==0.7.0
 pure-eval==0.2.2
+pyasn1==0.5.1
+pyasn1-modules==0.3.0
 pybullet==3.2.6
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
 Pygments==2.17.2
+pyOpenSSL @ file:///croot/pyopenssl_1690223430423/work
 pyparsing==3.1.1
 pyquaternion==0.9.9
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
 python-dateutil==2.8.2
 pytorch3d @ git+https://github.com/facebookresearch/pytorch3d@3145dd4d16edaceb394838364b8e87a440f83c10
 pytz==2023.3.post1
 PyYAML==6.0.1
 referencing==0.32.0
-requests==2.31.0
+requests @ file:///croot/requests_1690400202158/work
+requests-oauthlib==1.3.1
 retrying==1.3.4
 rpds-py==0.13.2
+rsa==4.9
 scikit-image==0.22.0
 scikit-learn==1.3.2
 scikit-video==1.1.11
 scipy==1.11.4
-six==1.16.0
+six @ file:///tmp/build/80754af9/six_1644875935023/work
 smmap==5.0.1
 stack-data==0.6.3
 tabulate==0.9.0
 tenacity==8.2.3
-tensorboardX==2.6.2.2
+tensorboard==2.15.1
+tensorboard-data-server==0.7.2
 termcolor==2.4.0
 threadpoolctl==3.2.0
 tifffile==2023.12.9
-torch==1.12.0+cu113
-torchaudio==0.12.0+cu113
+torch==1.11.0
+torchaudio==0.11.0
 torchgeometry==0.1.2
-torchvision==0.13.0+cu113
+torchvision==0.12.0
 tqdm==4.66.1
 traitlets==5.14.0
 trimesh==4.0.5
-typing_extensions==4.9.0
+typing_extensions @ file:///croot/typing_extensions_1690297465030/work
 tzdata==2023.3
-urllib3==2.1.0
+urllib3 @ file:///croot/urllib3_1698257533958/work
 wcwidth==0.2.12
 Werkzeug==3.0.1
 widgetsnbextension==4.0.9
