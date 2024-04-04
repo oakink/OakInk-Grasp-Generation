@@ -75,7 +75,7 @@ Get the [MANO hand model](https://github.com/oakink/OakInk/blob/main/docs/instal
 cp -r {path_to}/mano_v1_2 ./assets
 ```
 
-Download the pretrained model weights from [Google Drive](https://drive.google.com/drive/folders/140Lsl9MnmDCIH38tkza3yRCyoG9gk88O?usp=share_link)
+Download the pretrained model weights from [Hugging Face](https://huggingface.co/oakink/OakInk-v1-Grasp-Generation/tree/main)
 and put the contents in `./checkpoints`.
 
 Now this repo is ready to generate grasp, visualize, and train models.   
